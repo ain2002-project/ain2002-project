@@ -78,7 +78,7 @@ You can run the codes as python files. They are essentially same with the notebo
 python train.py
 ```
 
-# This will train and save 3 models that can be used in evaluation and inference.
+This will train and save 3 models that can be used in evaluation and inference.
 
 # 5.0 Evaluation
 
