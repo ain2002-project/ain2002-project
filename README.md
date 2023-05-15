@@ -96,3 +96,7 @@ kaggle competitions submit -c playground-series-s3e2 -f submission.csv -m "Messa
 ```
 
 If everything goes well, you should get a `0.89624` private score.
+
+# Accessing Pre-trained Models
+
+Pretrained models will be generated and saved in `models` folder. Also we have shared the models folder in a [github release](https://github.com/osbm/ain2002-project/releases/tag/1.0).
