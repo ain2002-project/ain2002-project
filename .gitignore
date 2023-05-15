@@ -3,3 +3,5 @@
 .ipynb_checkpoints/
 *.zip
 data/
+models/
+submission.csv
