@@ -19,7 +19,6 @@ from sklearn.model_selection import GridSearchCV  # hyperparameter tuning
 from sklearn.model_selection import train_test_split  # splitting data
 from sklearn.ensemble import GradientBoostingClassifier  # for building gradient boosting classifiers
 from sklearn.feature_selection import mutual_info_regression  # for performing mutual information feature selection
-
 from lightgbm import LGBMClassifier
 import lightgbm as lgbm
 
@@ -51,6 +50,19 @@ def main():
         lgbm_model = pickle.load(f)
 
 
+    # lets calcluate accuracy, precision, recall, f1 score, and roc auc score on validation set
+
+    valid_hat = [
+        gboost_model.predict_proba(valid_X)[:, 1],
+        nn_model.predict(valid_X).flatten(),
+        lgbm_model.predict_proba(valid_X)[:, 1],
+    ]
+    ensemble_valid_hat = np.mean(valid_hat, axis=0)
+
+    print("ROC AUC score on validation set:", roc_auc_score(valid_y, ensemble_valid_hat))
+    
+
+    print("Starting Inference")
     # Predictions
     predictions = [
         gboost_model.predict_proba(test_df)[:, 1],
@@ -59,10 +71,12 @@ def main():
     ]
     ensemble_predictions = np.mean(predictions, axis=0)
 
+    
+
     submission = pd.read_csv("data/playground-series-s3e2/sample_submission.csv")
     submission["stroke"] = ensemble_predictions
     submission.to_csv("submission.csv", index=False)
-
+    print("Submission file created")
 
 
 if __name__ == "__main__":

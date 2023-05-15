@@ -159,7 +159,6 @@ def preprocess(df, test_df):
         X,y, bad_idx = compute_outliers(X,y,X[feature], feature, threshold=6)
         bad_indexes.extend(bad_idx)
 
-    print("Total rows discarded:", len(bad_indexes))  # Print the total number of rejected points
 
     X=X.reset_index(drop=True)
     y=y.reset_index(drop=True)
