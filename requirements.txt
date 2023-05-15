@@ -8,3 +8,4 @@ lightgbm
 watermark
 scipy
 jupyter
+kaggle
