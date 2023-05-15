@@ -1,4 +1,5 @@
 # Stroke Prediction using Machine learning
+In this collaborative coding project, we aim to develop accurate stroke prediction models using machine learning techniques. Our dataset encompasses various essential features, including age, gender, BMI, average glucose level, work type, and smoking status. To achieve reliable predictions, we perform data preprocessing, outlier detection, feature selection, and model training. Through this project, we showcase the practical application of machine learning techniques in stroke prediction, providing valuable insights for early detection and prevention. Our ultimate goal is to accurately identify individuals at risk, contributing to improved healthcare outcomes.
 # 1.0 Environment Setup
 
 ## 1.1 Using local environment
