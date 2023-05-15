@@ -248,16 +248,6 @@ def main():
     with open('models/lgbm_model.pkl', 'wb') as f:
         pickle.dump(lgbm_model, f)
 
-    predictions = [
-        gboost_model.predict_proba(test_df)[:, 1],
-        nn_model.predict(test_df).flatten(),
-        lgbm_model.predict_proba(test_df)[:, 1],
-    ]
-    ensemble_predictions = np.mean(predictions, axis=0)
-
-    submission = pd.read_csv("data/playground-series-s3e2/sample_submission.csv")
-    submission["stroke"] = ensemble_predictions
-    submission.to_csv("submission.csv", index=False)
 
 
 if __name__ == "__main__":

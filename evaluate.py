@@ -54,7 +54,7 @@ def main():
 
     valid_hat = [
         gboost_model.predict_proba(valid_X)[:, 1],
-        nn_model.predict(valid_X).flatten(),
+        nn_model.predict(valid_X, verbose=0).flatten(),
         lgbm_model.predict_proba(valid_X)[:, 1],
     ]
     ensemble_valid_hat = np.mean(valid_hat, axis=0)
@@ -66,7 +66,7 @@ def main():
     # Predictions
     predictions = [
         gboost_model.predict_proba(test_df)[:, 1],
-        nn_model.predict(test_df).flatten(),
+        nn_model.predict(test_df, verbose=0).flatten(),
         lgbm_model.predict_proba(test_df)[:, 1],
     ]
     ensemble_predictions = np.mean(predictions, axis=0)
