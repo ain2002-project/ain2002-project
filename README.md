@@ -69,3 +69,29 @@ You can run the notebook on any jupyter server (vscode, jupyterlab, by jupyter n
 ```bash
 jupyter notebook
 ```
+
+# 4.0 Training
+
+You can run the codes as python files. They are essentially same with the notebook but with less output and no plots. You can run the codes by running the following command in the root directory of the repository:
+
+```bash
+python train.py
+```
+
+# This will train and save 3 models that can be used in evaluation and inference.
+
+# 5.0 Evaluation
+
+The evaluation script runs evaluation metrics on the validation dataset and makes inference on the competition dataset. You can run it by
+
+```bash
+python evaluate.py
+```
+
+And if you want to see the submission score on kaggle, you can run the following command to upload the submission file:
+
+```bash
+kaggle competitions submit -c playground-series-s3e2 -f submission.csv -m "Message"
+```
+
+If everything goes well, you should get a `0.89624` private score.
