@@ -9,7 +9,7 @@ In this collaborative coding project, we aim to develop accurate stroke predicti
 First you need to clone the repository:
 
 ```bash
-git clone https://github.com/osbm/ain2002-project
+git clone https://github.com/ain2002-project/ain2002-project
 cd ain2002-project
 ```
 
